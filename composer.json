@@ -1,0 +1,12 @@
+{
+    "name": "fardus/makefile",
+    "description": "Collection of Makfiles",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hamada Sidi Fahari",
+            "email": "h.fahari@gmail.com"
+        }
+    ],
+    "require": {}
+}
