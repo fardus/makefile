@@ -1,6 +1,9 @@
 {
     "name": "fardus/makefile",
     "description": "Collection of Makfiles",
+    "homepage": "https://github.com/fardus/makefile",
+    "keywords": ["makefile", "shortcut", "git", "php", "docker"],
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
