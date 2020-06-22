@@ -49,6 +49,3 @@ load-database: ## Build the db, control the schema validity, load fixtures and c
 	$(SYMFONY) doctrine:schema:validate
 	$(SYMFONY) doctrine:fixtures:load -n
 	$(SYMFONY) doctrine:schema:validate
-
-init-snippet: ## Initialize a new snippet
-	$(SYMFONY) $(PROJECT):init-snippet
