@@ -36,14 +36,17 @@ migration: ## Make migration command
 	$(SYMFONY_BIN) console make:migration
 
 doctrine-migrate: ##  Migrate with doctrine migration
-	$(SYMFONY_BIN) console doctrine:migrations:migrate -n
+	$(SYMFONY_BIN) console doctrine:migrations:migrate -n -vvv
 
-load-fixtures: ## Build the db, control the schema validity, load fixtures and check the migration status
+load-fixtures: ## load doctrine fixtures
 	$(SYMFONY) doctrine:fixtures:load -n
+
+doctrine-new-database: ## Add new database if not exists
+	$(SYMFONY) doctrine:database:create --if-not-exists
 
 load-database: ## Build the db, control the schema validity, load fixtures and check the migration status
 	$(SYMFONY) doctrine:cache:clear-metadata
-	$(SYMFONY) doctrine:database:create --if-not-exists
+	@make doctrine-new-database
 	$(SYMFONY) doctrine:schema:drop --force
 	$(SYMFONY) doctrine:schema:create
 	$(SYMFONY) doctrine:schema:validate
